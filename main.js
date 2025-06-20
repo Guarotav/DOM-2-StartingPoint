@@ -1,8 +1,8 @@
 /*
 [✅] Add rows to the grid
 [✅] Add columns to the grid
-[ ] Remove rows from the grid
-[ ] Remove columns from the grid
+[✅] Remove rows from the grid
+[✅] Remove columns from the grid
 [ ] Select a color from a dropdown menu of colors
 [ ] Click on a single cell, changing its color to the currently selected color
 [ ] Fill all uncolored cells with the currently selected color
@@ -56,5 +56,16 @@ const removeRowBtn = document.getElementById("remove-row");
 removeRowBtn.addEventListener("click", () => {
   if (tbody.rows.length > 0){
     tbody.deleteRow(tbody.rows.length - 1); 
+  }
+});
+
+
+/////////////////////////////-------->// Remove columns from the grid <---- ////////////////////////////////////////////////
+const removeColumnBtn = document.getElementById("remove-column");
+removeColumnBtn.addEventListener("click", () => {
+  if (tbody.rows.length > 0 && tbody.rows[0].cells.length > 0) {
+    for (let row of tbody.rows) {
+      row.deleteCell(row.cells.length - 1);
+    }
   }
 });
