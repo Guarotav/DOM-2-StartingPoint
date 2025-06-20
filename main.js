@@ -1,14 +1,33 @@
-// Please feel free to change the JS as you see fit! This is just a starting point.
-
 const root = document.getElementById("root");
+const row = document.getElementById("add-row");
+const column = document.getElementById("add-column");
 
 root.addEventListener("click", (event) => {
   console.log(event.target.tagName);
   console.log(event.target);
 });
 
+row.addEventListener("click", () => {
+  addRowToGrid();
+});
 
-//add rows to the grid
+const tbody = document.querySelector("tbody");
+columnCount = tbody.rows[0].cells.length;
+
+
+
+// Add rows to the grid
+function addRowToGrid(columnCount) {
+  const newRow = document.createElement("tr");
+
+  for (let i = 0; i < columnCount; i++) {
+    const cell = document.createElement("td");
+    newRow.appendChild(cell);
+  }
+
+  tbody.appendChild(newRow);
+  console.log(tbody);
+}
 
 
 
