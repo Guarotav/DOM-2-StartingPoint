@@ -1,6 +1,6 @@
 const root = document.getElementById("root");
-const row = document.getElementById("add-row");
-const column = document.getElementById("add-column");
+const addRow = document.getElementById("add-row");
+const addColumn = document.getElementById("add-column");
 
 
 root.addEventListener("click", (event) => {
@@ -8,7 +8,7 @@ root.addEventListener("click", (event) => {
   console.log(event.target);
 });
 
-row.addEventListener("click", () => {
+addRow.addEventListener("click", () => {
   addRowToGrid(columnCount);
 });
 
@@ -30,19 +30,20 @@ function addRowToGrid(columnCount) {
 
 
 //add columns to the grid
-function addRowToGrid(columnCount) {
-  const newRow = document.createElement("tr");
+addColumn.addEventListener("click", () => {
+  addColumnToGrid();
+});
 
-  for (let i = 0; i < columnCount; i++) {
-    const cell = document.createElement("td");
-    newRow.append(cell);
-  }
-  console.log(newRow);
-  tbody.append(newRow);
-  console.log(tbody);
+function addColumnToGrid() {
+   const rows = document.querySelectorAll("tr");
+
+   rows.forEach((row)=>{
+    const newCol = document.createElement("td");
+    row.append(newCol);
+   })
+   columnCount ++;
+
 }
-
-
 
 
 
