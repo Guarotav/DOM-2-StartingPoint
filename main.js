@@ -1,48 +1,38 @@
-const root = document.getElementById("root");
-const row = document.getElementById("add-row");
-const column = document.getElementById("add-column");
+const tbody = document.querySelector("tbody");
+const addRowBtn = document.getElementById("add-row");
+const addColumnBtn = document.getElementById("add-column");
 
-root.addEventListener("click", (event) => {
-  console.log(event.target.tagName);
-  console.log(event.target);
-});
 
-row.addEventListener("click", () => {
+/////////////////////////////-------->// Adds a row to the grid when the "Add Row" button is clicked <---- //////////////////////
+
+addRowBtn.addEventListener("click", () => {
+  const columnCount = tbody.rows[0] ? tbody.rows[0].cells.length : 0;
   addRowToGrid(columnCount);
 });
 
-const tbody = document.querySelector("tbody");
-columnCount = tbody.rows[0].cells.length;
-
-// Add rows to the grid
 function addRowToGrid(columnCount) {
   const newRow = document.createElement("tr");
-
   for (let i = 0; i < columnCount; i++) {
     const cell = document.createElement("td");
-    newRow.append(cell);
-  }
-  tbody.append(newRow);
+    newRow.appendChild(cell);
+}
+  tbody.appendChild(newRow);
 }
 
-//add columns to the grid
-function addRowToGrid(columnCount) {
-  const newRow = document.createElement("tr");
+////////////////////////////////--------> Adds a column to the grid when the "Add Column" button is clicked <---- //////////////////////
+addColumnBtn.addEventListener("click", () => {
+  addColumnToGrid();
+});
 
-  for (let i = 0; i < columnCount; i++) {
-    const cell = document.createElement("td");
-    newRow.append(cell);
+function addColumnToGrid() {
+  // Add one cell to each existing row
+  for (let row of tbody.rows) {
+    const newCell = document.createElement("td");
+    row.appendChild(newCell);
   }
-  console.log(newRow);
-  tbody.append(newRow);
-  console.log(tbody);
 }
 
 
-
-
-
-//add columns to the grid
 
 
 
