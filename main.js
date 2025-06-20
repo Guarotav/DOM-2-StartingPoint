@@ -1,3 +1,4 @@
+
 /*
 [✅] Add rows to the grid
 [✅] Add columns to the grid
@@ -10,12 +11,25 @@
 [ ] Clear all cells / restore all cells to their original/initial color
 [ ] Click and hold (mouseover) from a single cell (start) to a different cell (end) such that all affected/hovered-over cells from start to end change to the currently selected color
 */
+=======
+const root = document.getElementById("root");
+const addRow = document.getElementById("add-row");
+const addColumn = document.getElementById("add-column");
 
+
+
+
+
+=======
+addRow.addEventListener("click", () => {
+  addRowToGrid(columnCount);
+});
 
 
 const tbody = document.querySelector("tbody");
 const addRowBtn = document.getElementById("add-row");
 const addColumnBtn = document.getElementById("add-column");
+
 
 
 /////////////////////////////-------->// Adds a row to the grid when the "Add Row" button is clicked <---- //////////////////////
@@ -25,13 +39,22 @@ addRowBtn.addEventListener("click", () => {
   addRowToGrid(columnCount);
 });
 
+=======
+
+
 function addRowToGrid(columnCount) {
   const newRow = document.createElement("tr");
   for (let i = 0; i < columnCount; i++) {
     const cell = document.createElement("td");
+
     newRow.appendChild(cell);
 }
   tbody.appendChild(newRow);
+=======
+    newRow.append(cell);
+  }
+  tbody.append(newRow);
+
 }
 
 ////////////////////////////////--------> Adds a column to the grid when the "Add Column" button is clicked <---- //////////////////////
@@ -48,6 +71,7 @@ function addColumnToGrid() {
 }
 
 
+
 /////////////////////////////-------->// Remove rows from the grid <---- ////////////////////////////////////////////////
                           // Remove Button added to HTML under id "remove-row"
 
@@ -58,3 +82,79 @@ removeRowBtn.addEventListener("click", () => {
     tbody.deleteRow(tbody.rows.length - 1); 
   }
 });
+=======
+//add columns to the grid
+addColumn.addEventListener("click", () => {
+  addColumnToGrid();
+});
+
+function addColumnToGrid() {
+   const rows = document.querySelectorAll("tr");
+
+   rows.forEach((row)=>{
+    const newCol = document.createElement("td");
+    row.append(newCol);
+   })
+   columnCount ++;
+
+}
+
+
+
+//remove rows from the grid
+
+
+
+
+
+
+
+//remove columns from the grid
+
+
+
+
+
+
+
+//select a color from a dropdown menu of colors
+ 
+ 
+ 
+ 
+ 
+ 
+
+//click on a single cell, changing its color to the currently selected color
+ 
+ 
+ 
+ 
+ 
+ 
+//fill all uncolored cells with the currently selected color
+
+
+
+
+
+
+
+// fill all cells with the currently selected color
+ 
+
+
+
+
+
+
+//clear all cells/restore all cells to their original/initial color
+ 
+
+
+
+
+
+
+//click and hold (mouseover) from a single cell (start) to a different cell (end) such that all affected/hovered-over cells from start to end change to the currently selected color
+

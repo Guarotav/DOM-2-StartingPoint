@@ -19,7 +19,7 @@ header.classList.add("header");
 header.textContent = "Cat Badge Generator";
 root.appendChild(header);
 
-// Make the input container
+// Make the input containergit 
 const inputContainer = document.createElement("div");
 inputContainer.classList.add("input-container");
 root.appendChild(inputContainer);
