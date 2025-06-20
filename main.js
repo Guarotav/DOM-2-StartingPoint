@@ -69,3 +69,7 @@ removeColumnBtn.addEventListener("click", () => {
     }
   }
 });
+
+
+//////////////////////////////-------->// Select a color from a dropdown menu of colors <---- ////////////////////////////////////////////////
+const colorSelect = document.getElementById("color-select");
