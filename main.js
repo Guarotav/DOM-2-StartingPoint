@@ -16,7 +16,10 @@ root.addEventListener("click", (event) => {
 // row.classList.add("TR");
 // root.appendChild(TR);
 
-
+row.addEventListener("click", (event) => {
+  console.log(event.target.tagName);
+  console.log(event.target);
+});
 
 const addRow = () => {
   //const tbody = document.querySelector("tbody");
