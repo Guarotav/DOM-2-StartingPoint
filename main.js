@@ -21,7 +21,7 @@ const addColumnBtn = document.getElementById("add-column");
 /////////////////////////////-------->// Adds a row to the grid when the "Add Row" button is clicked <---- //////////////////////
 
 addRowBtn.addEventListener("click", () => {
-  const columnCount = tbody.rows[0] ? tbody.rows[0].cells.length : 0;
+  const columnCount =tbody.rows[0].cells.length;
   addRowToGrid(columnCount);
 });
 
