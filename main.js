@@ -1,7 +1,7 @@
 /*
 [✅] Add rows to the grid
 [✅] Add columns to the grid
-[✅] Remove rows from the grid
+[ ] Remove rows from the grid
 [ ] Remove columns from the grid
 [ ] Select a color from a dropdown menu of colors
 [ ] Click on a single cell, changing its color to the currently selected color
@@ -50,6 +50,7 @@ function addColumnToGrid() {
 
 /////////////////////////////-------->// Remove rows from the grid <---- ////////////////////////////////////////////////
                           // Remove Button added to HTML under id "remove-row"
+
 
 const removeRowBtn = document.getElementById("remove-row");
 removeRowBtn.addEventListener("click", () => {
